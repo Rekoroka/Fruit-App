@@ -21,6 +21,7 @@ version: 1.0.0+1
 environment:
   sdk: ^3.10.0
 
+
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
@@ -31,6 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.2.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -68,6 +70,18 @@ flutter:
      - assets/icons/google.png
      - assets/icons/facebook.png
      - assets/icons/phone.png
+     - assets/images/home1.png
+     - assets/images/home_logo.png
+     - assets/images/frame1.png
+     - assets/images/frame2.png
+     - assets/images/frame3.png
+     - assets/images/frame4.png
+     - assets/icons/bar_icon1.svg
+     - assets/icons/bar_icon2.svg
+     - assets/icons/bar_icon3.svg
+     - assets/icons/bar_icon4.svg
+     - assets/icons/bar_icon5.svg
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
