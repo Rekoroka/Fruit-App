@@ -76,6 +76,10 @@ flutter:
      - assets/images/frame2.png
      - assets/images/frame3.png
      - assets/images/frame4.png
+     - assets/images/fig1.png
+     - assets/images/fig2.png
+     - assets/images/fig3.png
+     - assets/images/fig4.png
      - assets/icons/bar_icon1.svg
      - assets/icons/bar_icon2.svg
      - assets/icons/bar_icon3.svg

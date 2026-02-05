@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_app/home_screen.dart';
+//import 'package:fruit_app/home_screen.dart';
+import 'package:fruit_app/products_screen.dart';
 //import 'package:fruit_app/otp_view.dart';
 //import 'package:fruit_app/login_screen.dart';
 //import 'package:fruit_app/verify_number.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(debugShowCheckedModeBanner: false, home: child);
       },
-      child: const HomeScreen(),
+      child: const ProductsScreen(),
     );
   }
 }
