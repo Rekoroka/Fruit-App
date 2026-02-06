@@ -85,6 +85,10 @@ flutter:
      - assets/icons/bar_icon3.svg
      - assets/icons/bar_icon4.svg
      - assets/icons/bar_icon5.svg
+     - assets/icons/face.svg
+     - assets/icons/insta.svg
+     - assets/icons/whatsapp.svg
+     - assets/icons/youtube.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
