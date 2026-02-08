@@ -81,6 +81,8 @@ flutter:
      - assets/images/fig3.png
      - assets/images/fig4.png
      - assets/images/fruit_shop.png
+     - assets/images/order_success.png
+     - assets/images/order_failed.png
      - assets/icons/bar_icon1.svg
      - assets/icons/bar_icon2.svg
      - assets/icons/bar_icon3.svg
@@ -90,6 +92,10 @@ flutter:
      - assets/icons/insta.svg
      - assets/icons/whatsapp.svg
      - assets/icons/youtube.svg
+     - assets/icons/credit_card.svg
+     - assets/icons/cash_on_delivery.svg
+     - assets/icons/knet.svg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

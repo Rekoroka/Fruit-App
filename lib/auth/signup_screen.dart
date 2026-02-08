@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../core/widgets/custom_social_button.dart';
+import '../../../core/widgets/custom_social_button.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});

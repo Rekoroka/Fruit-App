@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../models/product_list.dart';
+import '../../models/product_list.dart';
 
 class ProductsScreen extends StatefulWidget {
   const ProductsScreen({super.key});

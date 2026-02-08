@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_app/basket/checkout/order_error.dart';
+//import 'package:fruit_app/basket/checkout/order_success.dart';
+//import 'package:fruit_app/basket/checkout/delivery_time_screen.dart';
+//import 'package:fruit_app/basket/checkout/delivery_address_screen.dart';
+//import 'package:fruit_app/basket/checkout/payment.dart';
 //import 'package:fruit_app/basket_screen.dart';
-import 'package:fruit_app/check_out_screen';
 //import 'package:fruit_app/conect_us.dart';
 //import 'package:fruit_app/fruit_shop.dart';
 //import 'package:fruit_app/edit_profile_screen.dart';
@@ -32,7 +36,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(debugShowCheckedModeBanner: false, home: child);
       },
-      child: const CheckoutScreen(),
+      child: const OrderErrorScreen(),
     );
   }
 }

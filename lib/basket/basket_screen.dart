@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../core/widgets/bottom_navigator_bar.dart';
+import '../../core/widgets/bottom_navigator_bar.dart';
 
 class BasketScreen extends StatefulWidget {
   const BasketScreen({super.key});
@@ -39,7 +39,6 @@ class _BasketScreenState extends State<BasketScreen> {
       ),
       body: Column(
         children: [
-          // 1. قائمة منتجات السلة
           Expanded(
             child: ListView.builder(
               padding: EdgeInsets.all(16.w),
@@ -48,7 +47,6 @@ class _BasketScreenState extends State<BasketScreen> {
             ),
           ),
 
-          // 2. ملخص الحساب والزر السفلي
           Container(
             padding: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 20.h),
             decoration: BoxDecoration(
@@ -91,7 +89,6 @@ class _BasketScreenState extends State<BasketScreen> {
                       ],
                     ),
 
-                    // --- زر الـ Checkout المعدل باستخدام CustomNavItem ---
                     Container(
                       decoration: BoxDecoration(
                         color: const Color(0xFF2D5E3D),
@@ -100,8 +97,7 @@ class _BasketScreenState extends State<BasketScreen> {
                       child: CustomNavItem(
                         icon: Icons.check_circle_outline,
                         label: "Proceed To Checkout",
-                        isSelected:
-                            false, // نتركه false ليظهر النص الأبيض والخلفية الخضراء
+                        isSelected: false,
                         onTap: () {},
                       ),
                     ),
@@ -127,7 +123,6 @@ class _BasketScreenState extends State<BasketScreen> {
       ),
       child: Row(
         children: [
-          // مكان الصورة الدائرية
           Container(
             width: 70.w,
             height: 70.h,
@@ -169,7 +164,6 @@ class _BasketScreenState extends State<BasketScreen> {
               ],
             ),
           ),
-          // متحكم الكمية
           Container(
             padding: EdgeInsets.symmetric(horizontal: 5.w),
             decoration: BoxDecoration(
