@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_app/conect_us.dart';
+//import 'package:fruit_app/basket_screen.dart';
+import 'package:fruit_app/check_out_screen';
+//import 'package:fruit_app/conect_us.dart';
+//import 'package:fruit_app/fruit_shop.dart';
 //import 'package:fruit_app/edit_profile_screen.dart';
 //import 'package:fruit_app/more_screen.dart';
 //import 'package:fruit_app/home_screen.dart';
@@ -29,7 +32,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(debugShowCheckedModeBanner: false, home: child);
       },
-      child: const ContactUsScreen(),
+      child: const CheckoutScreen(),
     );
   }
 }
