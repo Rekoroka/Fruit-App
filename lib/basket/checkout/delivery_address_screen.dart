@@ -38,7 +38,7 @@ class _DeliveryAddressScreenState extends State<DeliveryAddressScreen> {
       body: Column(
         children: [
           Container(height: 1.h, color: Colors.grey.shade300),
-          // Header stepper
+
           Container(
             padding: EdgeInsets.only(top: 10.h, bottom: 20.h),
             child: Column(

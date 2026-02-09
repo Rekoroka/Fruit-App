@@ -34,66 +34,71 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
           ),
         ),
       ),
-      body: ListView(
-        padding: EdgeInsets.fromLTRB(20.w, 20.h, 20.w, 100.h),
+      body: Column(
         children: [
-          _buildOrderItem(
-            id: "#243188 - 37 KD",
-            date: "9 Sep",
-            items: "4 items",
-            status: "Delivering",
-            color: const Color(0xFFFFC107),
-            svgPath: 'assets/icons/delivering.svg',
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.fromLTRB(20.w, 20.h, 20.w, 20.h),
+              children: [
+                _buildOrderItem(
+                  id: "#243188 - 37 KD",
+                  date: "9 Sep",
+                  items: "4 items",
+                  status: "Delivering",
+                  color: const Color(0xFFFFC107),
+                  svgPath: 'assets/icons/delivering.svg',
+                ),
+                SizedBox(height: 15.h),
+                _buildOrderItem(
+                  id: "#882610",
+                  date: "8 Sep",
+                  items: "3 items",
+                  status: "Finished",
+                  color: const Color(0xFF00C853),
+                  svgPath: 'assets/icons/finished.svg',
+                ),
+                SizedBox(height: 15.h),
+                _buildOrderItem(
+                  id: "#882610",
+                  date: "8 Sep",
+                  items: "3 items",
+                  status: "Canceled",
+                  color: const Color(0xFFFF5252),
+                  svgPath: 'assets/icons/canceled.svg',
+                ),
+                SizedBox(height: 15.h),
+                _buildOrderItem(
+                  id: "#882610",
+                  date: "8 Sep",
+                  items: "3 items",
+                  status: "Working",
+                  color: const Color(0xFF3F51B5),
+                  svgPath: 'assets/icons/working.svg',
+                ),
+                SizedBox(height: 15.h),
+                _buildOrderItem(
+                  id: "#882610",
+                  date: "8 Sep",
+                  items: "3 items",
+                  status: "Delivered",
+                  color: const Color(0xFFE040FB),
+                  svgPath: 'assets/icons/delivered.svg',
+                ),
+                SizedBox(height: 15.h),
+                _buildOrderItem(
+                  id: "#882610",
+                  date: "8 Sep",
+                  items: "3 items",
+                  status: "New",
+                  color: const Color(0xFF03A9F4),
+                  svgPath: 'assets/icons/new.svg',
+                ),
+              ],
+            ),
           ),
-          SizedBox(height: 15.h),
-          _buildOrderItem(
-            id: "#882610",
-            date: "8 Sep",
-            items: "3 items",
-            status: "Finished",
-            color: const Color(0xFF00C853),
-            svgPath: 'assets/icons/finished.svg',
-          ),
-          SizedBox(height: 15.h),
-          _buildOrderItem(
-            id: "#882610",
-            date: "8 Sep",
-            items: "3 items",
-            status: "Canceled",
-            color: const Color(0xFFFF5252),
-            svgPath: 'assets/icons/canceled.svg',
-          ),
-          SizedBox(height: 15.h),
-          _buildOrderItem(
-            id: "#882610",
-            date: "8 Sep",
-            items: "3 items",
-            status: "Working",
-            color: const Color(0xFF3F51B5),
-            svgPath: 'assets/icons/working.svg',
-          ),
-          SizedBox(height: 15.h),
-          _buildOrderItem(
-            id: "#882610",
-            date: "8 Sep",
-            items: "3 items",
-            status: "Delivered",
-            color: const Color(0xFFE040FB),
-            svgPath: 'assets/icons/delivered.svg',
-          ),
-          SizedBox(height: 15.h),
-          _buildOrderItem(
-            id: "#882610",
-            date: "8 Sep",
-            items: "3 items",
-            status: "New",
-            color: const Color(0xFF03A9F4),
-            svgPath: 'assets/icons/new_order.svg',
-          ),
+          _buildBottomBar(),
         ],
       ),
-
-      bottomNavigationBar: _buildBottomBar(),
     );
   }
 
@@ -115,8 +120,8 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
       child: Row(
         children: [
           Container(
-            width: 50.w,
-            height: 50.h,
+            width: 58.w,
+            height: 58.h,
             padding: EdgeInsets.all(12.w),
             decoration: BoxDecoration(
               color: color.withOpacity(0.1),
@@ -124,6 +129,8 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
             ),
             child: SvgPicture.asset(
               svgPath,
+              width: 28.w,
+              height: 22.h,
               colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
             ),
           ),
@@ -164,16 +171,29 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
               ],
             ),
           ),
+
           Container(
-            width: 45.w,
-            height: 45.h,
-            padding: EdgeInsets.all(12.w),
+            width: 66.w,
+            height: 66.h,
+            alignment: Alignment.center,
             decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-            child: SvgPicture.asset(
-              'assets/icons/arrow_right.svg',
-              colorFilter: const ColorFilter.mode(
-                Colors.white,
-                BlendMode.srcIn,
+            child: Container(
+              width: 25.w,
+              height: 23.h,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white, width: 1.2),
+                borderRadius: BorderRadius.circular(6.r),
+              ),
+              child: SvgPicture.asset(
+                'assets/icons/arrow_right.svg',
+                width: 9.w,
+                height: 12.h,
+                fit: BoxFit.contain,
+                colorFilter: const ColorFilter.mode(
+                  Colors.white,
+                  BlendMode.srcIn,
+                ),
               ),
             ),
           ),
