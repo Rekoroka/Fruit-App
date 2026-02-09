@@ -95,6 +95,13 @@ flutter:
      - assets/icons/credit_card.svg
      - assets/icons/cash_on_delivery.svg
      - assets/icons/knet.svg
+     - assets/icons/arrow_right.svg
+     - assets/icons/canceled.svg
+     - assets/icons/delivering.svg
+     - assets/icons/finished.svg
+     - assets/icons/working.svg
+     - assets/icons/delivered.svg
+     - assets/icons/new.svg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
