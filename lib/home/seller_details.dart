@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../models/product_list.dart';
 
-class ProductsScreen extends StatefulWidget {
-  const ProductsScreen({super.key});
+class SellerDetails extends StatefulWidget {
+  const SellerDetails({super.key});
 
   @override
-  State<ProductsScreen> createState() => _ProductsScreenState();
+  State<SellerDetails> createState() => _SellerDetailsState();
 }
 
-class _ProductsScreenState extends State<ProductsScreen> {
+class _SellerDetailsState extends State<SellerDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.pushReplacementNamed(context, '/home'),
         ),
         centerTitle: true,
         title: Text(
@@ -137,7 +137,9 @@ class SectionTitle extends StatelessWidget {
           ),
           if (title == "Products")
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushReplacementNamed(context, '/fruit_shop');
+              },
               child: Icon(Icons.sort, color: Colors.black, size: 20.sp),
             ),
         ],

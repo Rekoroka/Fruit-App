@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_app/core/widgets/custom_social_button.dart';
 
-class VerifyNumber extends StatefulWidget {
-  const VerifyNumber({super.key});
+class ForgetPasswordScreen extends StatefulWidget {
+  const ForgetPasswordScreen({super.key});
 
   @override
-  State<VerifyNumber> createState() => _VerifyNumberState();
+  State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();
 }
 
-class _VerifyNumberState extends State<VerifyNumber> {
+class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.pushReplacementNamed(context, '/login'),
         ),
       ),
       body: SingleChildScrollView(
@@ -60,7 +60,9 @@ class _VerifyNumberState extends State<VerifyNumber> {
                 text: 'Submit',
                 color: const Color(0xFF204F38),
                 textColor: Colors.white,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, '/otp');
+                },
               ),
             ],
           ),

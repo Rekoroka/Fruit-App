@@ -19,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.pushReplacementNamed(context, '/welcome'),
         ),
       ),
       body: SingleChildScrollView(
@@ -62,13 +62,18 @@ class _LoginScreenState extends State<LoginScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    'Forgot Password?',
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      color: const Color(0xFF005B96),
-                      fontWeight: FontWeight.bold,
-                      decoration: TextDecoration.underline,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/forgot_password');
+                    },
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        color: const Color(0xFF005B96),
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline,
+                      ),
                     ),
                   ),
                 ],
@@ -78,7 +83,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 text: 'Login',
                 color: const Color(0xFF204F38),
                 textColor: Colors.white,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, '/home');
+                },
               ),
 
               SizedBox(height: 40.h),

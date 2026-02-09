@@ -16,7 +16,7 @@ class _OnboardingViewState extends State<OnboardingView> {
   int currentIndex = 0;
   @override
   void initState() {
-    pageController = PageController(initialPage: 0); // first page
+    pageController = PageController(initialPage: 0);
     super.initState();
   }
 
@@ -43,8 +43,7 @@ class _OnboardingViewState extends State<OnboardingView> {
             controller: pageController,
             onPageChanged: (index) {
               setState(() {
-                currentIndex =
-                    index; // تحديث الحالة لإعادة بناء الشاشة بالرقم الجديد
+                currentIndex = index;
               });
             },
             children: [
@@ -76,7 +75,7 @@ class _OnboardingViewState extends State<OnboardingView> {
             top: 76.h,
             left: 362.w,
             child: Visibility(
-              visible: currentIndex != 2, // لو وصلنا لصفحة رقم 2 يختفي
+              visible: currentIndex != 2,
               child: GestureDetector(
                 onTap: () {
                   pageController.animateToPage(
@@ -102,11 +101,14 @@ class _OnboardingViewState extends State<OnboardingView> {
               text: currentIndex == 2 ? 'Get Started' : 'Next',
               onTap: () {
                 if (currentIndex < 2) {
-                  // لو لسه في أول صفحتين، روح للي بعدها
+                  // الانتقال للصفحة التالية داخل الـ Onboarding
                   pageController.nextPage(
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                   );
+                } else {
+                  // التنقل لشاشة الـ Welcome عند الضغط على Get Started
+                  Navigator.pushReplacementNamed(context, '/welcome');
                 }
               },
             ),
@@ -118,9 +120,8 @@ class _OnboardingViewState extends State<OnboardingView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // 3 points
                 buildDot(index: 0),
-                SizedBox(width: 20.w), // مسافة بين النقط
+                SizedBox(width: 20.w),
                 buildDot(index: 1),
                 SizedBox(width: 20.w),
                 buildDot(index: 2),

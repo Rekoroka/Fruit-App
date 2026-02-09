@@ -22,7 +22,7 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.pushReplacementNamed(context, '/home'),
         ),
         centerTitle: true,
         title: Text(

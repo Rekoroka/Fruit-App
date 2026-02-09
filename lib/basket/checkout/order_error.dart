@@ -45,7 +45,8 @@ class OrderErrorScreen extends StatelessWidget {
 
               CustomSocialButton(
                 text: 'Back',
-                onTap: () => Navigator.pop(context),
+                onTap: () =>
+                    Navigator.pushReplacementNamed(context, '/payment'),
                 color: const Color(0xFFFF5252),
                 textColor: Colors.white,
               ),
@@ -62,7 +63,7 @@ class OrderErrorScreen extends StatelessWidget {
       elevation: 0,
       leading: IconButton(
         icon: const Icon(Icons.arrow_back_ios, color: Colors.black, size: 20),
-        onPressed: () => Navigator.pop(context),
+        onPressed: () => Navigator.pushReplacementNamed(context, '/basket'),
       ),
       title: Text(
         'Checkout',

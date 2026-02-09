@@ -21,7 +21,8 @@ class _BasketScreenState extends State<BasketScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () =>
+              Navigator.pushReplacementNamed(context, '/fruit_shop'),
         ),
         centerTitle: true,
         title: Text(
@@ -98,7 +99,9 @@ class _BasketScreenState extends State<BasketScreen> {
                         icon: Icons.check_circle_outline,
                         label: "Proceed To Checkout",
                         isSelected: false,
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushReplacementNamed(context, '/checkout');
+                        },
                       ),
                     ),
                   ],
@@ -254,31 +257,41 @@ class _BasketScreenState extends State<BasketScreen> {
             icon: Icons.home,
             label: "Home",
             isSelected: false,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/home');
+            },
           ),
           CustomNavItem(
             icon: Icons.list,
             label: "Orders",
             isSelected: false,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/my_orders');
+            },
           ),
           CustomNavItem(
             icon: Icons.shopping_basket,
             label: "Basket",
             isSelected: true,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/basket');
+            },
           ),
           CustomNavItem(
             icon: Icons.favorite,
             label: "Fav",
             isSelected: false,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/favorite');
+            },
           ),
           CustomNavItem(
             icon: Icons.more_horiz,
             label: "More",
             isSelected: false,
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/more');
+            },
           ),
         ],
       ),

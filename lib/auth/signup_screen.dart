@@ -14,7 +14,7 @@ class SignUpScreen extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.pushReplacementNamed(context, '/welcome'),
         ),
       ),
       body: SingleChildScrollView(
@@ -63,7 +63,9 @@ class SignUpScreen extends StatelessWidget {
                 text: 'Sign Up',
                 color: const Color(0xFF204F38),
                 textColor: Colors.white,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, '/home');
+                },
               ),
 
               SizedBox(height: 40.h),
@@ -75,7 +77,8 @@ class SignUpScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 14.sp),
                   ),
                   GestureDetector(
-                    onTap: () => Navigator.pop(context),
+                    onTap: () =>
+                        Navigator.pushReplacementNamed(context, '/login'),
                     child: Text(
                       'Login',
                       style: TextStyle(

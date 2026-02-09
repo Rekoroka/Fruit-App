@@ -45,7 +45,9 @@ class OrderSuccessScreen extends StatelessWidget {
 
               CustomSocialButton(
                 text: 'Continue Shopping',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, '/my_orders');
+                },
                 color: const Color(0xFF204F38),
                 textColor: Colors.white,
               ),
@@ -54,7 +56,9 @@ class OrderSuccessScreen extends StatelessWidget {
 
               CustomSocialButton(
                 text: 'Track Order',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, '/order_tracking');
+                },
                 color: Colors.white,
                 textColor: const Color(0xFF204F38),
               ),
@@ -71,7 +75,7 @@ class OrderSuccessScreen extends StatelessWidget {
       elevation: 0,
       leading: IconButton(
         icon: const Icon(Icons.arrow_back_ios, color: Colors.black, size: 20),
-        onPressed: () => Navigator.pop(context),
+        onPressed: () => Navigator.pushReplacementNamed(context, '/basket'),
       ),
       title: Text(
         'Checkout',

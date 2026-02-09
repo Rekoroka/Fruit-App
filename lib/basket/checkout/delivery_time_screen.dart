@@ -22,7 +22,7 @@ class _DeliveryTimeScreenState extends State<DeliveryTimeScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.pushReplacementNamed(context, '/basket'),
         ),
         centerTitle: true,
         title: Text(
@@ -79,7 +79,9 @@ class _DeliveryTimeScreenState extends State<DeliveryTimeScreen> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/delivery_address');
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF2D5E3D),
                 minimumSize: Size(double.infinity, 54.h),

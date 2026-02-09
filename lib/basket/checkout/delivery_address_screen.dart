@@ -11,7 +11,7 @@ class DeliveryAddressScreen extends StatefulWidget {
 
 class _DeliveryAddressScreenState extends State<DeliveryAddressScreen> {
   int _selectedAddressIndex = 0;
-  int currentIndex = 3;
+  int currentIndex = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,8 @@ class _DeliveryAddressScreenState extends State<DeliveryAddressScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () =>
+              Navigator.pushReplacementNamed(context, '/delivery_time'),
         ),
         centerTitle: true,
         title: Text(
@@ -144,7 +145,9 @@ class _DeliveryAddressScreenState extends State<DeliveryAddressScreen> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/payment');
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF2D5E3D),
                 minimumSize: Size(double.infinity, 54.h),

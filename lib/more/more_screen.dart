@@ -86,7 +86,6 @@ class _MoreScreenState extends State<MoreScreen> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        // --- إضافة الخط الرمادي أسفل الـ AppBar ---
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(1.0.h),
           child: Container(color: Colors.grey.shade200, height: 1.0.h),
@@ -104,7 +103,9 @@ class _MoreScreenState extends State<MoreScreen> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 40.w),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/login');
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF2D5E3D),
                   minimumSize: Size(double.infinity, 50.h),
@@ -125,19 +126,29 @@ class _MoreScreenState extends State<MoreScreen> {
 
             SizedBox(height: 30.h),
 
-            _buildMenuItem(Icons.person_outline, 'Profile', () {}),
-            _buildMenuItem(Icons.format_list_numbered_rtl, 'My Orders', () {}),
-            _buildMenuItem(Icons.favorite_border, 'Favorite', () {}),
+            _buildMenuItem(Icons.person_outline, 'Profile', () {
+              Navigator.pushReplacementNamed(context, '/more');
+            }),
+            _buildMenuItem(Icons.format_list_numbered_rtl, 'My Orders', () {
+              Navigator.pushReplacementNamed(context, '/my_orders');
+            }),
+            _buildMenuItem(Icons.favorite_border, 'Favorite', () {
+              Navigator.pushReplacementNamed(context, '/favorite');
+            }),
             _buildMenuItem(
               Icons.language_outlined,
               'Language',
               _showLanguageDialog,
             ),
-            _buildMenuItem(Icons.headset_mic_outlined, 'Support', () {}),
+            _buildMenuItem(Icons.headset_mic_outlined, 'Support', () {
+              Navigator.pushReplacementNamed(context, '/contact_us');
+            }),
             _buildMenuItem(
               Icons.description_outlined,
               'Terms & Conditions',
-              () {},
+              () {
+                Navigator.pushReplacementNamed(context, '/terms');
+              },
             ),
             _buildMenuItem(Icons.info_outline, 'About Us', () {}),
 

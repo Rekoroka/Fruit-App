@@ -50,7 +50,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               CustomSocialButton(
                 icon: 'assets/icons/phone.png',
                 text: 'Sign in with phone number',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, '/signup');
+                },
               ),
               SizedBox(height: 35.h),
               CustomSocialButton(
@@ -72,7 +74,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 children: [
                   Text('Already member? ', style: TextStyle(fontSize: 14.sp)),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, '/login');
+                    },
                     child: Text(
                       'Sign In',
                       style: TextStyle(

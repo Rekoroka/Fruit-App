@@ -9,7 +9,6 @@ class FruitShop extends StatefulWidget {
 }
 
 class _FruitShopState extends State<FruitShop> {
-  // متغيرات الحالة لإدارة الاختيارات
   String selectedWeight = "2 Kg - 12.00 KD";
   String selectedAddon = "";
 
@@ -22,7 +21,8 @@ class _FruitShopState extends State<FruitShop> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () =>
+              Navigator.pushReplacementNamed(context, '/saller_details'),
         ),
         centerTitle: true,
         title: Text(
@@ -36,7 +36,9 @@ class _FruitShopState extends State<FruitShop> {
         actions: [
           IconButton(
             icon: const Icon(Icons.favorite_border, color: Colors.black),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/favorite');
+            },
           ),
           IconButton(
             icon: const Icon(Icons.ios_share, color: Colors.black),
@@ -55,30 +57,25 @@ class _FruitShopState extends State<FruitShop> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // 1. الصورة الرئيسية مع تاج الخصم
                 _buildProductImage(),
 
                 SizedBox(height: 15.h),
 
-                // 2. تفاصيل المنتج والأسعار
                 _buildProductInfo(),
 
                 SizedBox(height: 20.h),
 
-                // 3. قسم اختيار الوزن (مفتوح افتراضياً)
                 _buildWeightSelection(),
 
                 const Divider(thickness: 1, color: Color(0xFFEEEEEE)),
 
-                // 4. قسم الإضافات
                 _buildAddonsSelection(),
 
-                SizedBox(height: 100.h), // مسافة للزر السفلي
+                SizedBox(height: 100.h),
               ],
             ),
           ),
 
-          // 5. زر الإضافة للسلة (Floating)
           _buildAddToCartButton(),
         ],
       ),
@@ -94,9 +91,7 @@ class _FruitShopState extends State<FruitShop> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.r),
             image: const DecorationImage(
-              image: AssetImage(
-                "assets/images/product_bg.png",
-              ), // حساب مكان الصورة
+              image: AssetImage("assets/images/fruit_shop.png"),
               fit: BoxFit.cover,
             ),
           ),
@@ -269,7 +264,9 @@ class _FruitShopState extends State<FruitShop> {
       bottom: 30.h,
       right: 20.w,
       child: ElevatedButton.icon(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacementNamed(context, '/basket');
+        },
         icon: const Icon(Icons.shopping_basket_outlined, color: Colors.white),
         label: const Text(
           "Add to Cart",

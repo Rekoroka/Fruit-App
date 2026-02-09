@@ -154,7 +154,9 @@ class SectionTitle extends StatelessWidget {
           ),
           if (title == "Sellers")
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/saller_details');
+              },
               child: const Text(
                 "Show all",
                 style: TextStyle(color: Colors.blueGrey),

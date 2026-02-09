@@ -22,7 +22,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () =>
+              Navigator.pushReplacementNamed(context, '/delivery_address'),
         ),
         centerTitle: true,
         title: Text(
@@ -270,7 +271,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
         children: [
           SizedBox(height: 10.h),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/order_success');
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF2D5E3D),
               minimumSize: Size(double.infinity, 54.h),
