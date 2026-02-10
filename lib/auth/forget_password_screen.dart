@@ -56,13 +56,15 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               const PhoneInputFiled(),
 
               SizedBox(height: 40.h),
-              CustomSocialButton(
-                text: 'Submit',
-                color: const Color(0xFF204F38),
-                textColor: Colors.white,
-                onTap: () {
-                  Navigator.pushReplacementNamed(context, '/otp');
-                },
+              Center(
+                child: CustomSocialButton(
+                  text: 'Submit',
+                  color: const Color(0xFF204F38),
+                  textColor: Colors.white,
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, '/otp');
+                  },
+                ),
               ),
             ],
           ),
