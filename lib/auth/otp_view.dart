@@ -111,10 +111,10 @@ class OTPDotInput extends StatelessWidget {
         autofocus: true,
         textAlign: TextAlign.center,
         keyboardType: TextInputType.number,
-        maxLength: 1, // رقم واحد بس في كل دائرة
+        maxLength: 1,
         style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
         decoration: InputDecoration(
-          counterText: "", // بنشيل عداد الأرقام اللي تحت
+          counterText: "",
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30.r),
             borderSide: const BorderSide(color: Colors.grey),
@@ -126,9 +126,7 @@ class OTPDotInput extends StatelessWidget {
         ),
         onChanged: (value) {
           if (value.length == 1) {
-            FocusScope.of(
-              context,
-            ).nextFocus(); // ينتقل للدائرة اللي بعدها تلقائياً
+            FocusScope.of(context).nextFocus();
           }
         },
       ),

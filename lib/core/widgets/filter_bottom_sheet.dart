@@ -15,13 +15,11 @@ class _FilterDialogState extends State<FilterDialog> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      // استخدام Dialog بدل Container
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.r)),
       child: Padding(
         padding: EdgeInsets.all(20.w),
         child: Column(
-          mainAxisSize:
-              MainAxisSize.min, // مهم جداً عشان المربع مياخدش الشاشة كلها
+          mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               'Filter by',
@@ -29,7 +27,6 @@ class _FilterDialogState extends State<FilterDialog> {
             ),
             SizedBox(height: 20.h),
 
-            // اختيار المنطقة
             const Align(
               alignment: Alignment.centerLeft,
               child: Text("Delivered To", style: TextStyle(color: Colors.grey)),
@@ -55,7 +52,6 @@ class _FilterDialogState extends State<FilterDialog> {
 
             SizedBox(height: 15.h),
 
-            // خيارات الصح (Offers & Free Delivery)
             _buildCheckItem(
               "Offers",
               offers,
@@ -69,7 +65,6 @@ class _FilterDialogState extends State<FilterDialog> {
 
             SizedBox(height: 25.h),
 
-            // زرار Apply
             ElevatedButton(
               onPressed: () => Navigator.pop(context),
               style: ElevatedButton.styleFrom(
@@ -102,7 +97,7 @@ class _FilterDialogState extends State<FilterDialog> {
       onChanged: onChanged,
       activeColor: const Color(0xFF2D5E3D),
       contentPadding: EdgeInsets.zero,
-      checkboxShape: const CircleBorder(), // عشان يطلع دائري زي الصور
+      checkboxShape: const CircleBorder(),
     );
   }
 }

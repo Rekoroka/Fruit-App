@@ -76,7 +76,6 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
 
             SizedBox(height: 30.h),
 
-            // صف أيقونات التواصل الاجتماعي
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -97,7 +96,6 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
     );
   }
 
-  // التعديل هنا: استخدمنا SvgPicture بدل Image
   Widget _buildSocialContainer(String assetPath) {
     return GestureDetector(
       onTap: () {},
@@ -107,12 +105,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
           shape: BoxShape.circle,
           border: Border.all(color: Colors.grey.shade300),
         ),
-        child: SvgPicture.asset(
-          assetPath,
-          width: 25.w,
-          height: 25.h,
-          // لو حابة توحدي لون الأيقونات ممكن تضيفي colorFilter
-        ),
+        child: SvgPicture.asset(assetPath, width: 25.w, height: 25.h),
       ),
     );
   }
