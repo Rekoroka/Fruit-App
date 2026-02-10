@@ -79,13 +79,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               SizedBox(height: 40.h),
-              CustomSocialButton(
-                text: 'Login',
-                color: const Color(0xFF204F38),
-                textColor: Colors.white,
-                onTap: () {
-                  Navigator.pushReplacementNamed(context, '/home');
-                },
+              Center(
+                child: CustomSocialButton(
+                  text: 'Login',
+                  color: const Color(0xFF204F38),
+                  textColor: Colors.white,
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, '/home');
+                  },
+                ),
               ),
 
               SizedBox(height: 40.h),

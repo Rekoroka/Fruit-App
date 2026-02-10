@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruit_app/core/widgets/bottom_navigator_bar.dart';
 import 'package:fruit_app/core/widgets/filter_bottom_sheet.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -56,11 +56,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: _buildCustomBottomBar(),
+      bottomNavigationBar: _buildMainBottomNavBar(),
     );
   }
 
-  Widget _buildCustomBottomBar() {
+  Widget _buildMainBottomNavBar() {
     return Container(
       height: 70.h,
       margin: EdgeInsets.all(15.w),
@@ -71,49 +71,47 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _navItem(0, "assets/icons/bar_icon1.svg", "Home"),
-          _navItem(1, "assets/icons/bar_icon2.svg", "Orders"),
-          _navItem(2, "assets/icons/bar_icon3.svg", "Basket"),
-          _navItem(3, "assets/icons/bar_icon4.svg", "Favorite"),
-          _navItem(4, "assets/icons/bar_icon5.svg", "More"),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon1.svg',
+            label: "Home",
+            isSelected: true,
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/home');
+            },
+          ),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon2.svg',
+            label: "Orders",
+            isSelected: false,
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/my_orders');
+            },
+          ),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon3.svg',
+            label: "Basket",
+            isSelected: false,
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/basket');
+            },
+          ),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon4.svg',
+            label: "Fav",
+            isSelected: false,
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/favorite');
+            },
+          ),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon5.svg',
+            label: "More",
+            isSelected: false,
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/more');
+            },
+          ),
         ],
-      ),
-    );
-  }
-
-  Widget _navItem(int index, String svgPath, String label) {
-    bool isSelected = currentIndex == index;
-    return GestureDetector(
-      onTap: () => setState(() => currentIndex = index),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: isSelected ? Colors.white : Colors.transparent,
-          borderRadius: BorderRadius.circular(20.r),
-        ),
-        child: Row(
-          children: [
-            SvgPicture.asset(
-              svgPath,
-              width: 20.w,
-              height: 20.h,
-              colorFilter: ColorFilter.mode(
-                isSelected ? const Color(0xFF2D5E3D) : Colors.white,
-                BlendMode.srcIn,
-              ),
-            ),
-            if (isSelected) ...[
-              SizedBox(width: 4.w),
-              Text(
-                label,
-                style: const TextStyle(
-                  color: Color(0xFF2D5E3D),
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ],
-        ),
       ),
     );
   }
@@ -124,7 +122,8 @@ class BannerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150.h,
+      height: 130.h,
+
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 16.w),
       decoration: BoxDecoration(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_app/core/widgets/bottom_navigator_bar.dart';
 
 class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({super.key});
@@ -20,7 +21,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.pushReplacementNamed(context, '/home'),
         ),
         centerTitle: true,
         title: Text(
@@ -44,9 +45,9 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
               },
             ),
           ),
-          _buildBottomBar(),
         ],
       ),
+      bottomNavigationBar: _buildMainBottomNavBar(),
     );
   }
 
@@ -152,58 +153,59 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     );
   }
 
-  Widget _buildBottomBar() {
+  Widget _buildMainBottomNavBar() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-      decoration: const BoxDecoration(
-        color: Color(0xFF204F38),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
-        ),
+      height: 70.h,
+      margin: EdgeInsets.all(15.w),
+      decoration: BoxDecoration(
+        color: const Color(0xFF2D5E3D),
+        borderRadius: BorderRadius.circular(30.r),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _buildNormalIcon(Icons.home_outlined, 0),
-          _buildNormalIcon(Icons.list_alt, 1),
-          _buildNormalIcon(Icons.shopping_basket_outlined, 2),
-
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 8.h),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(25.r),
-            ),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.favorite,
-                  color: const Color(0xFF204F38),
-                  size: 22.sp,
-                ),
-                SizedBox(width: 5.w),
-                Text(
-                  "Favorite",
-                  style: TextStyle(
-                    color: const Color(0xFF204F38),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12.sp,
-                  ),
-                ),
-              ],
-            ),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon1.svg',
+            label: "Home",
+            isSelected: false,
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/home');
+            },
           ),
-          _buildNormalIcon(Icons.menu, 4),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon2.svg',
+            label: "Orders",
+            isSelected: false,
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/my_orders');
+            },
+          ),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon3.svg',
+            label: "Basket",
+            isSelected: false,
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/basket');
+            },
+          ),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon4.svg',
+            label: "Fav",
+            isSelected: true,
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/favorite');
+            },
+          ),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon5.svg',
+            label: "More",
+            isSelected: false,
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/more');
+            },
+          ),
         ],
       ),
-    );
-  }
-
-  Widget _buildNormalIcon(IconData icon, int index) {
-    return IconButton(
-      icon: Icon(icon, color: Colors.white70, size: 26.sp),
-      onPressed: () => setState(() => currentIndex = index),
     );
   }
 }

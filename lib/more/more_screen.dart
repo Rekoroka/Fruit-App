@@ -243,38 +243,61 @@ class _MoreScreenState extends State<MoreScreen> {
   Widget _buildBottomBar() {
     return Container(
       height: 70.h,
-      margin: EdgeInsets.all(15.w),
+      margin: EdgeInsets.fromLTRB(15.w, 0, 15.w, 20.h),
       decoration: BoxDecoration(
         color: const Color(0xFF2D5E3D),
         borderRadius: BorderRadius.circular(30.r),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: List.generate(5, (index) {
-          return CustomNavItem(
-            icon: _getIcon(index),
-            label: _getLabel(index),
-            isSelected: currentIndex == index,
-            onTap: () => setState(() => currentIndex = index),
-          );
-        }),
+        children: [
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon1.svg',
+            label: "Home",
+            isSelected: currentIndex == 0,
+            onTap: () {
+              setState(() => currentIndex = 0);
+              Navigator.pushReplacementNamed(context, '/home');
+            },
+          ),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon2.svg',
+            label: "Orders",
+            isSelected: currentIndex == 1,
+            onTap: () {
+              setState(() => currentIndex = 1);
+              Navigator.pushReplacementNamed(context, '/my_orders');
+            },
+          ),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon3.svg',
+            label: "Basket",
+            isSelected: currentIndex == 2,
+            onTap: () {
+              setState(() => currentIndex = 2);
+              Navigator.pushReplacementNamed(context, '/basket');
+            },
+          ),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon4.svg',
+            label: "Fav",
+            isSelected: currentIndex == 3,
+            onTap: () {
+              setState(() => currentIndex = 3);
+              Navigator.pushReplacementNamed(context, '/favorite');
+            },
+          ),
+          CustomNavItem(
+            icon: 'assets/icons/bar_icon5.svg',
+            label: "Profile",
+            isSelected: currentIndex == 4,
+            onTap: () {
+              setState(() => currentIndex = 4);
+              Navigator.pushReplacementNamed(context, '/more');
+            },
+          ),
+        ],
       ),
     );
-  }
-
-  IconData _getIcon(int index) {
-    List<IconData> icons = [
-      Icons.home,
-      Icons.list,
-      Icons.shopping_basket,
-      Icons.favorite,
-      Icons.more_horiz,
-    ];
-    return icons[index];
-  }
-
-  String _getLabel(int index) {
-    List<String> labels = ["Home", "Orders", "Basket", "Fav", "More"];
-    return labels[index];
   }
 }

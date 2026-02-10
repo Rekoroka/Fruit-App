@@ -95,8 +95,7 @@ class _BasketScreenState extends State<BasketScreen> {
                         color: const Color(0xFF2D5E3D),
                         borderRadius: BorderRadius.circular(15.r),
                       ),
-                      child: CustomNavItem(
-                        icon: Icons.check_circle_outline,
+                      child: _buildAddToCartButton(
                         label: "Proceed To Checkout",
                         isSelected: false,
                         onTap: () {
@@ -242,6 +241,30 @@ class _BasketScreenState extends State<BasketScreen> {
     );
   }
 
+  Widget _buildAddToCartButton({
+    required String label,
+    required bool isSelected,
+    required VoidCallback onTap,
+  }) {
+    return ElevatedButton(
+      onPressed: onTap,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: const Color(0xFF2D5E3D),
+        padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 12.h),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.r),
+        ),
+      ),
+      child: Text(
+        label,
+        style: const TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+
   Widget _buildMainBottomNavBar() {
     return Container(
       height: 70.h,
@@ -254,7 +277,7 @@ class _BasketScreenState extends State<BasketScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           CustomNavItem(
-            icon: Icons.home,
+            icon: 'assets/icons/bar_icon1.svg',
             label: "Home",
             isSelected: false,
             onTap: () {
@@ -262,7 +285,7 @@ class _BasketScreenState extends State<BasketScreen> {
             },
           ),
           CustomNavItem(
-            icon: Icons.list,
+            icon: 'assets/icons/bar_icon2.svg',
             label: "Orders",
             isSelected: false,
             onTap: () {
@@ -270,7 +293,7 @@ class _BasketScreenState extends State<BasketScreen> {
             },
           ),
           CustomNavItem(
-            icon: Icons.shopping_basket,
+            icon: 'assets/icons/bar_icon3.svg',
             label: "Basket",
             isSelected: true,
             onTap: () {
@@ -278,7 +301,7 @@ class _BasketScreenState extends State<BasketScreen> {
             },
           ),
           CustomNavItem(
-            icon: Icons.favorite,
+            icon: 'assets/icons/bar_icon4.svg',
             label: "Fav",
             isSelected: false,
             onTap: () {
@@ -286,7 +309,7 @@ class _BasketScreenState extends State<BasketScreen> {
             },
           ),
           CustomNavItem(
-            icon: Icons.more_horiz,
+            icon: 'assets/icons/bar_icon5.svg',
             label: "More",
             isSelected: false,
             onTap: () {

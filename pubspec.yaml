@@ -88,6 +88,7 @@ flutter:
      - assets/icons/bar_icon3.svg
      - assets/icons/bar_icon4.svg
      - assets/icons/bar_icon5.svg
+     - assets/icons/check.svg
      - assets/icons/face.svg
      - assets/icons/insta.svg
      - assets/icons/whatsapp.svg

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class FruitShop extends StatefulWidget {
   const FruitShop({super.key});
@@ -267,7 +268,11 @@ class _FruitShopState extends State<FruitShop> {
         onPressed: () {
           Navigator.pushReplacementNamed(context, '/basket');
         },
-        icon: const Icon(Icons.shopping_basket_outlined, color: Colors.white),
+        icon: SvgPicture.asset(
+          'assets/icons/bar_icon3.svg',
+          width: 24.w,
+          height: 24.h,
+        ),
         label: const Text(
           "Add to Cart",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),

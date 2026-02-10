@@ -59,13 +59,15 @@ class SignUpScreen extends StatelessWidget {
               const CustomTextField(hint: 'Password', isPassword: true),
 
               SizedBox(height: 40.h),
-              CustomSocialButton(
-                text: 'Sign Up',
-                color: const Color(0xFF204F38),
-                textColor: Colors.white,
-                onTap: () {
-                  Navigator.pushReplacementNamed(context, '/home');
-                },
+              Center(
+                child: CustomSocialButton(
+                  text: 'Sign Up',
+                  color: const Color(0xFF204F38),
+                  textColor: Colors.white,
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, '/home');
+                  },
+                ),
               ),
 
               SizedBox(height: 40.h),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomNavItem extends StatelessWidget {
-  final IconData icon;
+  final String icon;
   final String label;
   final bool isSelected;
   final VoidCallback onTap;
@@ -29,11 +30,15 @@ class CustomNavItem extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
+            SvgPicture.asset(
               icon,
+              width: 24.w,
+              height: 24.h,
 
-              color: isSelected ? const Color(0xFF2D5E3D) : Colors.white,
-              size: 24.sp,
+              colorFilter: ColorFilter.mode(
+                isSelected ? const Color(0xFF2D5E3D) : Colors.white,
+                BlendMode.srcIn,
+              ),
             ),
             if (isSelected) ...[
               SizedBox(width: 8.w),

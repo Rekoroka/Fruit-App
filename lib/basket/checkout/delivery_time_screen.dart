@@ -120,31 +120,31 @@ class _DeliveryTimeScreenState extends State<DeliveryTimeScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           CustomNavItem(
-            icon: Icons.home,
+            icon: 'assets/icons/bar_icon1.svg',
             label: "Home",
             isSelected: currentIndex == 0,
             onTap: () => setState(() => currentIndex = 0),
           ),
           CustomNavItem(
-            icon: Icons.list,
+            icon: 'assets/icons/bar_icon2.svg',
             label: "Orders",
             isSelected: currentIndex == 1,
             onTap: () => setState(() => currentIndex = 1),
           ),
           CustomNavItem(
-            icon: Icons.shopping_basket,
+            icon: 'assets/icons/bar_icon3.svg',
             label: "Basket",
             isSelected: currentIndex == 2,
             onTap: () => setState(() => currentIndex = 2),
           ),
           CustomNavItem(
-            icon: Icons.favorite,
+            icon: 'assets/icons/bar_icon4.svg',
             label: "Fav",
             isSelected: currentIndex == 3,
             onTap: () => setState(() => currentIndex = 3),
           ),
           CustomNavItem(
-            icon: Icons.person,
+            icon: 'assets/icons/bar_icon5.svg',
             label: "Profile",
             isSelected: currentIndex == 4,
             onTap: () => setState(() => currentIndex = 4),
